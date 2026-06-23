@@ -104,6 +104,7 @@
 | 2026-06-22 | Antigravity | Menyelesaikan FASE 3 — Katalog Produk | Membuat products.html, js/products.js, dan css/pages/products.css dengan fitur pencarian dan filter kategori dinamis |
 | 2026-06-22 | Antigravity | Menyelesaikan FASE 4 — Detail Produk | Membuat product-detail.html, js/product-detail.js, dan css/pages/product-detail.css dengan dynamic render, specs table, image gallery, WA prefilled text, dan section produk terkait |
 | 2026-06-22 | Antigravity | Menyelesaikan FASE 5 — Halaman Pendukung & Perbaikan Bug | Memperbaiki bug z-index navbar/filter, serta membuat about.html, css/pages/about.css, contact.html, css/pages/contact.css, dan js/contact.js dengan validasi form & notifikasi toast sukses |
-| 2026-06-23 | Antigravity | Menyelesaikan FASE 6 — Migrasi Database Dinamis & Ketersediaan Stok | Mengintegrasikan fetch Google Sheets (CSV) dengan parser mandiri robust dan fallback. Menambahkan visual overlay "No Stock!" dan penonaktifan tombol WhatsApp jika `inStock = false` di Beranda, Katalog, dan Detail. Memperbaiki masalah gambar TP-Link tidak muncul di Vercel menggunakan implementasi `referrerpolicy="no-referrer"`. |
+| 2026-06-23 | Antigravity | Menyelesaikan FASE 6 — Migrasi Database Dinamis & Ketersediaan Stok | Mengintegrasikan fetch Google Sheets (CSV) dengan parser mandiri robust dan fallback. Menambahkan visual overlay "No Stock!" dan penonaktifan tombol WhatsApp jika `inStock = false` di Beranda, Katalog, dan Detail. Memperbaiki masalah gambar TP-Link tidak muncul di Vercel menggunakan `referrerpolicy="no-referrer"`. Memperbaiki bug tautan menu navigasi mobile yang tidak dapat diklik akibat penumpukan context overlay dengan meningkatkan `z-index` elemen `header`. |
+
 
 

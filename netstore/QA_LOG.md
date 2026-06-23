@@ -76,10 +76,12 @@
 
 **Bug / Masalah Ditemukan:**
 1. **Pemblokiran Hotlinking Aset Eksternal (TP-Link static server) pada Vercel Deployed App**: Gambar produk TP-Link EAP670, TL-SG1008D, dan TL-SF1005D yang di-host di `static.tp-link.com` tidak muncul ketika dibuka dari domain `.vercel.app` (mengembalikan 403 Forbidden karena referer tidak disetujui), padahal di `localhost:8080` berhasil dimuat.
+2. **Konteks Penumpukan (Stacking Context) Menu Navigasi Mobile**: Saat layar disusutkan menjadi mobile, menu drawer hamburger dapat terbuka tetapi tautan di dalamnya tidak dapat diklik dan menu tampak tertutup lapisan gelap. Ini dikarenakan kontainer parent `header` memiliki z-index 100 yang berada di bawah level `z-index` global milik `.navbar-overlay` (z-index 104).
 
 **Catatan:**
 - Pengujian visual sukses dilakukan dengan menggunakan mock status `inStock = false` pada salah satu produk untuk mengonfirmasi ketepatan rendering CSS.
 - Masalah pemblokiran hotlinking diselesaikan dengan menerapkan atribut `referrerpolicy="no-referrer"` pada seluruh tag image (`<img>`) katalog, beranda, thumbnail galeri, dan detail produk. Tindakan ini memotong pengiriman header referer dan membuat aset dari CDN TP-Link berhasil termuat secara stabil di Vercel.
+- Masalah menu navigasi mobile diselesaikan dengan menaikkan `z-index` kontainer `header` menjadi `110` (di atas level overlay 104), sehingga elemen menu mobile berada di atas penutup gelap dan dapat merespons klik dengan benar.
 
 ---
 
