@@ -109,13 +109,13 @@
 
 @media (max-width: 640px) {
   .hero-actions {
-    max-width: 350px;
+    max-width: 300px;
     width: 100%;
     margin: 0 auto;
   }
 
   .hero-img {
-    max-width: 300px;
+    max-width: 250px;
     width: 85%;
   }
 }
