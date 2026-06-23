@@ -51,7 +51,7 @@
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: var(--text-4xl);
+  font-size: var(--text-3xl);
   font-weight: var(--font-bold);
   line-height: var(--leading-tight);
   color: var(--color-text-primary);
@@ -62,7 +62,7 @@
 }
 
 .hero-subtitle {
-  font-size: var(--text-2rem);
+  font-size: var(--text-base);
   line-height: var(--leading-relaxed);
   color: var(--color-text-secondary);
 }
@@ -109,13 +109,13 @@
 
 @media (max-width: 640px) {
   .hero-actions {
-    max-width: 400px;
+    max-width: 350px;
     width: 100%;
     margin: 0 auto;
   }
 
   .hero-img {
-    max-width: 350px;
+    max-width: 300px;
     width: 85%;
   }
 }
