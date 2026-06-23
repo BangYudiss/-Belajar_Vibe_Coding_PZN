@@ -8,6 +8,27 @@ Format: `[YYYY-MM-DD] — Deskripsi perubahan (alasan jika perlu)`
 
 ### [2026-06-23]
 **Oleh:** Antigravity
+**Task:** Fase 7 — Optimalisasi Tampilan Mobile (Responsivitas & Tipografi) & Penyederhanaan Tombol Beli WhatsApp
+
+**Perubahan:**
+- File `css/style.css`: Menurunkan base `font-size` pada `html` dari `15px` menjadi `14.5px` di desktop, dan dari `14px` menjadi `13px` di mobile/tablet (`max-width: 768px`) agar keterbacaan teks lebih nyaman.
+- File `css/components.css`: Memperkecil padding dan font size tombol `#nav-btn-wa` di navbar pada mobile viewport (`max-width: 576px`). Menambahkan media query mobile untuk kartu produk (`.product-card`) di mana padding body diperkecil (`12px`), visual font brand, judul, harga, dan deskripsi diperkecil, tombol WhatsApp "Beli" disembunyikan di grid kartu untuk menghindari penumpukan vertikal, dan tombol "Detail Produk" dipaksa lebar penuh (100%).
+- File `css/pages/product-detail.css`: Mengubah layout `.related-grid` di mode mobile agar menampilkan grid 2 kolom dengan gap `12px` (sebelumnya 1 kolom).
+- File `css/pages/home.css`: Memperkecil lebar tombol `.hero-actions` (max 350px), menyejajarkannya di **tengah secara horizontal** (`margin: 0 auto;`), dan memperkecil gambar placeholder "NetStore Devices" `.hero-img` (max 350px, width 85%) di bawah resolusi 640px. Mengubah layout grid testimoni `.testimonials-grid` di bawah resolusi 768px menjadi container flex horizontal scroll dengan snap alignment, dan membatasi lebar `.testimonial-card` di mobile menjadi 280px agar berbentuk kotak (compact) dan interaktif.
+- File `index.html` & `js/products.js`: Mengubah teks tombol beli kartu produk dari `Beli via WA` menjadi `Beli`.
+- File `product-detail.html`: Mengubah teks tombol beli utama dari `Beli Sekarang via WhatsApp` menjadi `Beli Sekarang`.
+- File `js/product-detail.js`: Mengubah teks dinamis tombol beli utama menjadi `Beli Sekarang`, dan mengubah teks tombol beli kartu produk terkait menjadi `Beli`.
+
+**Keputusan yang diambil:**
+- Menyembunyikan tombol "Beli" pada kartu produk di tampilan grid mobile (lebar < 576px) agar layout grid 2 kolom tetap rapi dan tidak terlalu tinggi secara vertikal.
+- Mengubah teks tombol beli WhatsApp menjadi lebih pendek ("Beli" dan "Beli Sekarang") agar tidak memakan ruang tombol yang terbatas.
+- Menggunakan flexbox horizontal scroll (`overflow-x: auto`) dengan `scroll-snap-type: x mandatory` pada testimoni mobile untuk menghemat ruang vertikal halaman dan memberikan pengalaman ulasan pelanggan yang modern dan interaktif seperti aplikasi native.
+- Membatasi tombol tindakan hero dan lebar gambar NetStore Devices di mobile (< 640px) agar tidak terkesan memenuhi layar dari ujung kanan ke ujung kiri dan menjaga keseimbangan desain visual.
+
+**Diketahui owner:** Ya
+
+### [2026-06-23]
+**Oleh:** Antigravity
 **Task:** Fase 6 — Integrasi Google Sheets API (Database Dinamis) & Fitur Ketersediaan Stok (inStock)
 
 **Perubahan:**

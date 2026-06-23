@@ -88,6 +88,13 @@
 /* ===== GLOBAL BASE STYLES ===== */
 html {
   scroll-behavior: smooth;
+  font-size: 14.5px; /* Scale down globally from 16px */
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 13px; /* Scale down further on tablet and mobile */
+  }
 }
 
 body {

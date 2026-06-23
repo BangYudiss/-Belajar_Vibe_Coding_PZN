@@ -138,13 +138,14 @@
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: var(--space-6);
+  grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+  gap: 12px; /* smaller gap on mobile */
 }
 
 @media (min-width: 640px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
   }
 }
 

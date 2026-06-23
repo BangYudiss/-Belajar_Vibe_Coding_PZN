@@ -156,7 +156,7 @@ async function initProductDetail() {
 
   if (buyBtn) {
     if (product.inStock) {
-      buyBtn.textContent = 'Beli Sekarang via WhatsApp';
+      buyBtn.textContent = 'Beli Sekarang';
       buyBtn.disabled = false;
       buyBtn.onclick = () => {
         // Memanggil helper whatsapp.js untuk buka chat
@@ -337,7 +337,7 @@ function renderRelatedProducts(currentProduct) {
         <div class="product-card-actions">
           <a href="product-detail.html?id=${prod.id}" class="btn btn-outline" id="btn-detail-${prod.id}">Detail Produk</a>
           <button class="btn btn-accent" id="btn-buy-${prod.id}" onclick="openWhatsApp('${prod.name}', '${prod.id}')" ${prod.inStock ? '' : 'disabled'}>
-            ${prod.inStock ? 'Beli via WA' : 'Habis'}
+            ${prod.inStock ? 'Beli' : 'Habis'}
           </button>
         </div>
       </div>

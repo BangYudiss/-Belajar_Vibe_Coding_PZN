@@ -171,7 +171,7 @@ function initCatalogFilters() {
             <div class="product-card-actions">
               <a href="product-detail.html?id=${product.id}" class="btn btn-outline" id="btn-detail-${product.id}">Detail Produk</a>
               <button class="btn btn-accent" id="btn-buy-${product.id}" onclick="openWhatsApp('${product.name}', '${product.id}')" ${product.inStock ? '' : 'disabled'}>
-                ${product.inStock ? 'Beli via WA' : 'Habis'}
+                ${product.inStock ? 'Beli' : 'Habis'}
               </button>
             </div>
           </div>
