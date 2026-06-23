@@ -6,6 +6,26 @@ Format: `[YYYY-MM-DD] — Deskripsi perubahan (alasan jika perlu)`
 
 ## [Belum ada versi rilis]
 
+### [2026-06-23]
+**Oleh:** Antigravity
+**Task:** Fase 6 — Integrasi Google Sheets API (Database Dinamis) & Fitur Ketersediaan Stok (inStock)
+
+**Perubahan:**
+- File `js/data/products.js`: Mengubah basis data dari statis lokal menjadi dinamis dengan mengambil (fetch) file CSV dari Google Sheets. Mengimplementasikan parser CSV (`parseCSVLine` & `csvToObjects`) yang menangani koma, tanda kutip ganda, array gambar, serta specs secara otomatis. Menambahkan fallback otomatis ke tautan eksport format CSV jika link publikasi utama diblokir.
+- File `index.html`: Memperbarui skrip rendering halaman utama agar mengambil data secara realtime via `fetchProductsFromSheets()` dan menampilkan loader spinner sebelum merender produk unggulan. Mengintegrasikan pengecekan `inStock` untuk merender overlay "No Stock!" dan mendisaktifkan tombol "Habis" jika stok kosong. Menambahkan `referrerpolicy="no-referrer"` pada gambar produk unggulan untuk mencegah pemblokiran hotlinking di domain produksi.
+- File `js/products.js`: Mengubah inisialisasi katalog menjadi async (`initKatalog`) untuk mengambil data sheets secara dinamis sebelum inisialisasi filter kategori & pencarian. Mengintegrasikan pengecekan `inStock` untuk merender overlay "No Stock!" dan menonaktifkan tombol "Habis" pada grid katalog. Menambahkan `referrerpolicy="no-referrer"` pada gambar kartu produk katalog.
+- File `js/product-detail.js`: Mengubah halaman detail menjadi async untuk mem-fetch basis data sheets secara dinamis guna memvalidasi detail produk berdasarkan parameter `?id=`. Jika `inStock` bernilai `false`, tombol utama WhatsApp dinonaktifkan dengan tulisan "Produk tidak tersedia" dan warna abu-abu. Memperbarui rendering produk terkait agar menampilkan overlay "No Stock!" jika stok habis. Mengatur atribut `referrerpolicy="no-referrer"` secara dinamis pada gambar utama galeri, gambar thumbnail, dan kartu produk terkait.
+- File `product-detail.html`: Menambahkan atribut `referrerpolicy="no-referrer"` pada elemen gambar utama (`#gallery-main-img`) untuk memastikan aset gambar dari CDN eksternal (seperti `static.tp-link.com`) ter-render dengan benar saat di-deploy ke Vercel.
+- File `css/components.css`: Menambahkan style overlay `.product-card-image-wrap.out-of-stock::after` untuk menutup gambar dengan teks "No Stock!" dan visual gelap (`brightness(0.7)`). Menambahkan global disabled styling untuk `.btn:disabled` dengan warna latar belakang border dan pointer-events none untuk memberi kesan visual tidak tersedia yang premium.
+
+**Keputusan yang diambil:**
+- Memakai tab-separated/comma-separated parsing buatan sendiri (`parseCSVLine`) demi meminimalkan ketergantungan pada pustaka pihak ketiga (clean JS).
+- Menjadikan tombol "Beli via WA" tidak dapat diklik (disabled) dan berwarna abu-abu jika stok habis, alih-alih menyembunyikannya, agar pengguna tetap mengetahui keberadaan produk tersebut namun sadar bahwa stoknya sedang kosong.
+- Menggunakan `referrerpolicy="no-referrer"` pada elemen gambar eksternal untuk menghentikan pengiriman header `Referer` ke server asal, sehingga dapat memotong proteksi anti-hotlinking yang memblokir gambar saat dimuat dari domain selain localhost (seperti Vercel).
+
+**Diketahui owner:** Ya
+
+
 ### [2026-06-22]
 **Oleh:** Antigravity
 **Task:** Penonaktifan Sticky Behavior pada Filter & Search Bar Section di Katalog

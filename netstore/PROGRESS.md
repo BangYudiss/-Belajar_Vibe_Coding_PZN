@@ -68,7 +68,19 @@
 
 ---
 
-## FASE 6 — Polish & QA
+## FASE 6 — Migrasi Database Dinamis (Google Sheets) & Ketersediaan Stok
+
+- ✅ Integrasi Google Sheets API via fetch
+- ✅ Parsing CSV robust dengan `parseCSVLine` & `csvToObjects`
+- ✅ Auto-fallback link Google Sheets CSV ke format export
+- ✅ Render loading state visual spinner di Beranda, Katalog, dan Detail
+- ✅ Pengecekan status ketersediaan stok (`inStock` TRUE/FALSE)
+- ✅ Overlay "No Stock!" dan penggelapan gambar pada card produk
+- ✅ Penonaktifan tombol beli WhatsApp dengan label "Produk tidak tersedia" (warna abu-abu) di halaman detail
+
+---
+
+## FASE 7 — Polish & QA
 
 - ⬜ Cek responsivitas semua halaman di mobile (360px)
 - ⬜ Cek responsivitas di tablet (768px)
@@ -92,3 +104,6 @@
 | 2026-06-22 | Antigravity | Menyelesaikan FASE 3 — Katalog Produk | Membuat products.html, js/products.js, dan css/pages/products.css dengan fitur pencarian dan filter kategori dinamis |
 | 2026-06-22 | Antigravity | Menyelesaikan FASE 4 — Detail Produk | Membuat product-detail.html, js/product-detail.js, dan css/pages/product-detail.css dengan dynamic render, specs table, image gallery, WA prefilled text, dan section produk terkait |
 | 2026-06-22 | Antigravity | Menyelesaikan FASE 5 — Halaman Pendukung & Perbaikan Bug | Memperbaiki bug z-index navbar/filter, serta membuat about.html, css/pages/about.css, contact.html, css/pages/contact.css, dan js/contact.js dengan validasi form & notifikasi toast sukses |
+| 2026-06-23 | Antigravity | Menyelesaikan FASE 6 — Migrasi Database Dinamis & Ketersediaan Stok | Mengintegrasikan fetch Google Sheets (CSV) dengan parser mandiri robust dan fallback. Menambahkan visual overlay "No Stock!" dan penonaktifan tombol WhatsApp jika `inStock = false` di Beranda, Katalog, dan Detail. Memperbaiki masalah gambar TP-Link tidak muncul di Vercel menggunakan implementasi `referrerpolicy="no-referrer"`. |
+
+

@@ -55,6 +55,34 @@
 
 ## Log QA Aktual
 
+## QA — Integrasi Database Dinamis & Fitur Ketersediaan Stok — 2026-06-23
+
+### Checklist JS (Asinkron & Fetch)
+- [x] Fungsi `fetchProductsFromSheets()` berhasil melakukan `fetch()` data dari Google Sheets.
+- [x] Auto-fallback dari tautan utama (`SHEET_URL` pub) ke tautan cadangan (`SHEET_FALLBACK_URL` export) jika diblokir berjalan mulus.
+- [x] Parser CSV (`csvToObjects`) memproses koma, tanda kutip ganda, array gambar, dan specs secara benar.
+- [x] Keadaan loading spinner ter-render secara visual di Beranda, Katalog, dan Detail selama pengambilan data.
+- [x] Tidak ada crash visual atau DOM jika parameter `id` di URL tidak ditemukan (penanganan 404).
+
+### Checklist UI & Fungsionalitas Ketersediaan Stok (`inStock`)
+- [x] Produk dengan `inStock = false` di database terdeteksi sebagai habis stok secara dinamis.
+- [x] Gambar produk dengan status out-of-stock tertutup overlay "No Stock!" dan lebih gelap secara visual.
+- [x] Tombol beli di halaman Katalog/Beranda dinonaktifkan (disabled) dan berganti teks menjadi "Habis" jika stok kosong.
+- [x] Tombol beli WhatsApp di Halaman Detail berganti teks menjadi "Produk tidak tersedia", dinonaktifkan (disabled) dengan warna abu-abu, dan pointer-events dinonaktifkan.
+- [x] Kartu produk terkait di halaman detail juga menampilkan overlay "No Stock!" dan tombol disabled jika stok habis.
+
+### Hasil
+**Status:** ✅ LULUS
+
+**Bug / Masalah Ditemukan:**
+1. **Pemblokiran Hotlinking Aset Eksternal (TP-Link static server) pada Vercel Deployed App**: Gambar produk TP-Link EAP670, TL-SG1008D, dan TL-SF1005D yang di-host di `static.tp-link.com` tidak muncul ketika dibuka dari domain `.vercel.app` (mengembalikan 403 Forbidden karena referer tidak disetujui), padahal di `localhost:8080` berhasil dimuat.
+
+**Catatan:**
+- Pengujian visual sukses dilakukan dengan menggunakan mock status `inStock = false` pada salah satu produk untuk mengonfirmasi ketepatan rendering CSS.
+- Masalah pemblokiran hotlinking diselesaikan dengan menerapkan atribut `referrerpolicy="no-referrer"` pada seluruh tag image (`<img>`) katalog, beranda, thumbnail galeri, dan detail produk. Tindakan ini memotong pengiriman header referer dan membuat aset dari CDN TP-Link berhasil termuat secara stabil di Vercel.
+
+---
+
 ## QA — Detail Produk (product-detail.html) — 2026-06-22
 
 ### Checklist HTML

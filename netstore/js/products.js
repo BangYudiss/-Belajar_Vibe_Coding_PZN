@@ -156,6 +156,7 @@ function initCatalogFilters() {
               alt="${product.name}" 
               class="product-card-image"
               loading="lazy"
+              referrerpolicy="no-referrer"
               onerror="this.onerror=null; this.src='https://placehold.co/600x450?text=${encodeURIComponent(product.name)}';"
             >
           </div>

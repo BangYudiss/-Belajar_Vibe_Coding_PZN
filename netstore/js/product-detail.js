@@ -213,6 +213,7 @@ function initProductGallery(product) {
   // Set gambar utama awal
   mainImg.src = images[0];
   mainImg.alt = product.name;
+  mainImg.setAttribute('referrerpolicy', 'no-referrer');
   
   // Set fallback gambar utama
   mainImg.onerror = () => {
@@ -226,6 +227,7 @@ function initProductGallery(product) {
     thumb.className = `gallery-thumb ${index === 0 ? 'active' : ''}`;
     thumb.src = imgSrc;
     thumb.alt = `${product.name} - Foto ${index + 1}`;
+    thumb.setAttribute('referrerpolicy', 'no-referrer');
     
     // Fallback thumbnail jika berkas fisik tidak ada
     thumb.onerror = () => {
@@ -320,6 +322,7 @@ function renderRelatedProducts(currentProduct) {
           alt="${prod.name}" 
           class="product-card-image"
           loading="lazy"
+          referrerpolicy="no-referrer"
           onerror="this.onerror=null; this.src='https://placehold.co/600x450?text=${encodeURIComponent(prod.name)}';"
         >
       </div>
