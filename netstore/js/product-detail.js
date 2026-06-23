@@ -1,5 +1,5 @@
 /**
- * Script Halaman Detail Produk NetStore
+ * Script Halaman Detail Produk SentraLAN
  * Menangani parsing query ID, memuat data produk, rendering galeri foto, dan tabel spesifikasi.
  */
 
@@ -68,7 +68,7 @@ async function initProductDetail() {
 
     // 4. Jika produk tidak ditemukan, tampilkan error
     if (!product) {
-      showErrorState('Produk Tidak Ditemukan', `Maaf, produk dengan ID "${productId}" tidak terdaftar di NetStore atau telah dihapus.`);
+      showErrorState('Produk Tidak Ditemukan', `Maaf, produk dengan ID "${productId}" tidak terdaftar di SentraLAN atau telah dihapus.`);
       return;
     }
 
@@ -77,10 +77,10 @@ async function initProductDetail() {
     errorContainer.classList.remove('active');
 
   // Update Page Title and SEO Meta Description
-  document.title = `${product.name} | NetStore`;
+  document.title = `${product.name} | SentraLAN`;
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
-    metaDescription.setAttribute('content', `${product.shortDesc}. Beli ${product.name} dengan garansi resmi dan penawaran terbaik hanya di NetStore.`);
+    metaDescription.setAttribute('content', `${product.shortDesc}. Beli ${product.name} dengan garansi resmi dan penawaran terbaik hanya di SentraLAN.`);
   }
 
   // Breadcrumbs

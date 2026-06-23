@@ -11,7 +11,7 @@ const WHATSAPP_PHONE = "6281234567890"; // Nomor dummy toko
  * @param {string} productId - ID unik produk
  */
 function openWhatsApp(productName, productId) {
-  const text = `Halo NetStore, saya tertarik dengan produk: ${productName} (ID: ${productId}). Apakah stoknya tersedia?`;
+  const text = `Halo SentraLAN, saya tertarik dengan produk: ${productName} (ID: ${productId}). Apakah stoknya tersedia?`;
   window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
 }
 
@@ -19,6 +19,6 @@ function openWhatsApp(productName, productId) {
  * Membuka chat WhatsApp untuk konsultasi umum
  */
 function openWhatsAppGeneral() {
-  const text = "Halo NetStore, saya ingin bertanya mengenai solusi perangkat jaringan.";
+  const text = "Halo SentraLAN, saya ingin bertanya mengenai solusi perangkat jaringan.";
   window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
 }

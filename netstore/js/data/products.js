@@ -1,5 +1,5 @@
 /**
- * Basis Data Produk NetStore (Dinamis dari Google Sheets)
+ * Basis Data Produk SentraLAN (Dinamis dari Google Sheets)
  * Mengambil data katalog produk secara realtime dari Google Sheets API (CSV).
  */
 

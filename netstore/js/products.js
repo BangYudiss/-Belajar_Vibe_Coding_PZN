@@ -1,5 +1,5 @@
 /**
- * Script Halaman Katalog Produk NetStore
+ * Script Halaman Katalog Produk SentraLAN
  * Menangani pencarian, filter kategori, reset filter, dan render katalog dinamis.
  */
 
@@ -18,7 +18,7 @@ async function initKatalog() {
     productsGrid.innerHTML = `
       <div class="loading-state" style="grid-column: 1 / -1; text-align: center; padding: var(--space-12) 0;">
         <div class="spinner" style="border: 4px solid rgba(255,255,255,0.1); border-left-color: var(--color-accent); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto var(--space-4) auto;"></div>
-        <p style="color: var(--color-text-muted);">Memuat katalog produk NetStore...</p>
+        <p style="color: var(--color-text-muted);">Memuat katalog produk SentraLAN...</p>
       </div>
     `;
     

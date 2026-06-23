@@ -1,5 +1,5 @@
 /**
- * Script Halaman Kontak NetStore
+ * Script Halaman Kontak SentraLAN
  * Mengatur validasi formulir kirim pesan dan menampilkan notifikasi toast sukses.
  */
 

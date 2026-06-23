@@ -8,6 +8,25 @@ Format: `[YYYY-MM-DD] — Deskripsi perubahan (alasan jika perlu)`
 
 ### [2026-06-23]
 **Oleh:** Antigravity
+**Task:** Fase 7.2 — Rebranding Nama Toko: NetStore → SentraLAN
+
+**Perubahan:**
+- File `index.html`: Mengubah judul, meta SEO, OG tags, logo navbar, heading "Mengapa Membeli di", gambar placeholder hero, footer logo, footer copyright, dan aria-label sosial menjadi SentraLAN.
+- File `products.html`: Mengubah judul, meta SEO, OG tags, logo navbar, footer logo, footer copyright, dan aria-label sosial menjadi SentraLAN.
+- File `product-detail.html`: Mengubah judul, meta SEO, OG tags, logo navbar, footer logo, footer copyright, dan aria-label sosial menjadi SentraLAN.
+- File `about.html`: Mengubah judul, meta SEO, OG tags, logo navbar, paragraf intro perusahaan, footer logo, footer copyright, dan aria-label sosial menjadi SentraLAN.
+- File `contact.html`: Mengubah judul, meta SEO, OG tags, logo navbar, footer logo, footer copyright, dan aria-label sosial menjadi SentraLAN.
+- File `js/whatsapp.js`: Mengubah teks pesan WhatsApp dari "Halo NetStore..." menjadi "Halo SentraLAN...".
+- File `js/products.js`, `js/product-detail.js`, `js/main.js`, `js/contact.js`, `js/data/products.js`: Mengubah referensi nama dan komentar header menjadi SentraLAN. Khusus `product-detail.js`: `document.title` dan meta description dinamis juga diperbarui.
+
+**Keputusan yang diambil:**
+- Nama "SentraLAN" dipilih karena memiliki keunikan tersendiri: kata "Sentra" (pusat/hub) dipadukan dengan "LAN" (jaringan), menciptakan identitas merek yang mudah diingat dan relevan dengan bisnis perangkat jaringan.
+- Semua keyword SEO yang sebelumnya menggunakan "netstore" diubah menjadi "sentralan" untuk konsistensi SEO.
+
+**Diketahui owner:** Ya
+
+### [2026-06-23]
+**Oleh:** Antigravity
 **Task:** Fase 7 — Optimalisasi Tampilan Mobile (Responsivitas & Tipografi) & Penyederhanaan Tombol Beli WhatsApp
 
 **Perubahan:**

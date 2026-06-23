@@ -1,5 +1,5 @@
 /**
- * Script Global NetStore
+ * Script Global SentraLAN
  * Mengatur interaksi dasar seperti toggle navbar mobile, active link, dan scroll smooth.
  */
 
