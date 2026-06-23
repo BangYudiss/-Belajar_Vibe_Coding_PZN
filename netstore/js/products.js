@@ -4,9 +4,51 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Inisialisasi Filter
-  initCatalogFilters();
+  initKatalog();
 });
+
+/**
+ * Menginisialisasi katalog produk secara asynchronous dengan memanggil fetch API
+ */
+async function initKatalog() {
+  const productsGrid = document.getElementById('products-grid');
+  
+  if (productsGrid) {
+    // Tampilkan Loading State visual secara elegan
+    productsGrid.innerHTML = `
+      <div class="loading-state" style="grid-column: 1 / -1; text-align: center; padding: var(--space-12) 0;">
+        <div class="spinner" style="border: 4px solid rgba(255,255,255,0.1); border-left-color: var(--color-accent); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto var(--space-4) auto;"></div>
+        <p style="color: var(--color-text-muted);">Memuat katalog produk NetStore...</p>
+      </div>
+    `;
+    
+    // Inject spinner animation keyframes if not exists
+    if (!document.getElementById('spinner-style')) {
+      const style = document.createElement('style');
+      style.id = 'spinner-style';
+      style.innerHTML = `@keyframes spin { to { transform: rotate(360deg); } }`;
+      document.head.appendChild(style);
+    }
+  }
+
+  try {
+    // Ambil data produk secara realtime
+    await fetchProductsFromSheets();
+    
+    // Setelah data berhasil terambil (global variable 'products' sudah terisi), inisialisasi filter
+    initCatalogFilters();
+  } catch (error) {
+    console.error('Gagal menginisialisasi katalog produk:', error);
+    if (productsGrid) {
+      productsGrid.innerHTML = `
+        <div class="error-state" style="grid-column: 1 / -1; text-align: center; padding: var(--space-12) 0; color: var(--color-danger);">
+          <p class="error-msg">Gagal memuat produk dari server. Silakan muat ulang halaman atau hubungi administrator.</p>
+        </div>
+      `;
+    }
+  }
+}
+
 
 /**
  * Menginisialisasi sistem filter, pencarian, dan render produk
@@ -107,7 +149,7 @@ function initCatalogFilters() {
 
         card.innerHTML = `
           ${badgeHTML}
-          <div class="product-card-image-wrap">
+          <div class="product-card-image-wrap ${product.inStock ? '' : 'out-of-stock'}">
             <!-- TODO: ganti dengan foto asli produk -->
             <img 
               src="${product.images[0]}" 
@@ -127,8 +169,8 @@ function initCatalogFilters() {
             </div>
             <div class="product-card-actions">
               <a href="product-detail.html?id=${product.id}" class="btn btn-outline" id="btn-detail-${product.id}">Detail Produk</a>
-              <button class="btn btn-accent" id="btn-buy-${product.id}" onclick="openWhatsApp('${product.name}', '${product.id}')">
-                Beli via WA
+              <button class="btn btn-accent" id="btn-buy-${product.id}" onclick="openWhatsApp('${product.name}', '${product.id}')" ${product.inStock ? '' : 'disabled'}>
+                ${product.inStock ? 'Beli via WA' : 'Habis'}
               </button>
             </div>
           </div>

@@ -1,0 +1,172 @@
+{
+  "tp-link-eap670": [
+    {
+      "url": "https://static.tp-link.com/upload/image-line/01_large_20250113062458u.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://static.tp-link.com/upload/image-line/02_large_20250113062512y.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://static.tp-link.com/upload/image-line/EAP670_EU_2.20_overview_02_large_20251031075947a.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    }
+  ],
+  "mikrotik-hap-ac2": [
+    {
+      "url": "https://cdn.mikrotik.com/web-assets/rb_images/1468_hi_res.png",
+      "ok": true,
+      "type": "image/png"
+    },
+    {
+      "url": "https://cdn.mikrotik.com/web-assets/rb_images/1469_hi_res.png",
+      "ok": true,
+      "type": "image/png"
+    },
+    {
+      "url": "https://cdn.mikrotik.com/web-assets/rb_images/1471_hi_res.png",
+      "ok": true,
+      "type": "image/png"
+    }
+  ],
+  "ubiquiti-u6-lite": [
+    {
+      "url": "https://cdn.ecomm.ui.com/products/259686b4-ae75-411c-90bc-e4040e38ca56/8ddcf98f-1c0c-48da-87c3-7cf0447ff8bd.png",
+      "ok": true,
+      "type": "image/png"
+    },
+    {
+      "url": "https://cdn.ecomm.ui.com/products/259686b4-ae75-411c-90bc-e4040e38ca56/0d00d5ab-4807-4b35-8c42-a938e5f704f9.png",
+      "ok": true,
+      "type": "image/png"
+    },
+    {
+      "url": "https://m.media-amazon.com/images/I/41l8XDzHEmL._AC_UF1000,1000_QL80_.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    }
+  ],
+  "cisco-catalyst-c9200l": [
+    {
+      "url": "https://media.router-switch.com/media/mf_webp/jpg/media/catalog/product/cache/b90fceee6a5fa7acd36a04c7b968181c/c/i/cisco-c9200l-48p-4g-e.webp",
+      "ok": true,
+      "type": "image/webp"
+    },
+    {
+      "url": "https://networkoutlet.com/cdn/shop/files/C9200L-48P-4G-A1_1024x1024@2x.jpg?v=1715160370",
+      "ok": true,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://res.cloudinary.com/hdtsjhzsw/image/upload/s--H_tFrwYw--/c_fit,w_750,h_500/yzlxylblyfieeiamhdyk.webp",
+      "ok": true,
+      "type": "image/webp"
+    }
+  ],
+  "tp-link-sg1008d": [
+    {
+      "url": "https://static.tp-link.com/TL-SG1008D(UN)8.0-01_1499930939948d.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://static.tp-link.com/TL-SG1008D(UN)8.0-02_1499931158006s.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://static.tp-link.com/TL-SG1008D(UN)8.0-04_1499931192439k.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    }
+  ],
+  "kabel-belden-cat6-usa": [
+    {
+      "url": "https://els.id/wp-content/uploads/2023/09/1ea14324-ed17-47fe-9480-5e3656b82540.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://images.tokopedia.net/img/cache/700/VqbcmM/2022/2/24/cefdac3e-2bd5-4537-bf8f-958c85d26c8c.jpg.webp",
+      "ok": true,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://img.lazcdn.com/g/p/5141f81a6ddff30d42d87ff40330495b.jpg_720x720q80.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    }
+  ],
+  "mikrotik-rb941-2nd": [
+    {
+      "url": "https://cdn.mikrotik.com/web-assets/rb_images/1007_hi_res.png",
+      "ok": true,
+      "type": "image/png"
+    },
+    {
+      "url": "https://cdn.mikrotik.com/web-assets/rb_images/1007_lg.webp",
+      "ok": true,
+      "type": "image/webp"
+    },
+    {
+      "url": "https://cdn.mikrotik.com/web-assets/rb_images/part531451910429m.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    }
+  ],
+  "ubiquiti-edgerouter-x": [
+    {
+      "url": "https://m.media-amazon.com/images/I/51rjdcAE5SL._AC_UF894,1000_QL80_.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://joebz.com/cdn/shop/products/UbiquitiER-X_1024x1024.jpg?v=1657526738",
+      "ok": true,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://www.compuworld.com.au/app/webroot/stuff/product_image/productImage_3930987431627454831.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    }
+  ],
+  "tp-link-sf1005d": [
+    {
+      "url": "https://static.tp-link.com/res/images/products/large/TL-SF1005D-05.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://static.tp-link.com/res/images/products/large/TL-SF1005D-02.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://static.tp-link.com/TL-SF1005D-03_1481513531484c.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    }
+  ],
+  "konektor-rj45-amp-cat6": [
+    {
+      "url": "https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2021/7/19/fe09533b-57a2-432f-9107-ba0fb7c486d4.jpg~tplv-aphluv4xwc-resize-jpeg:700:0.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2021/4/29/7902e9fc-be31-4c59-90fe-805b0b465156.jpg~tplv-aphluv4xwc-white-pad-v1:500:500.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//100/MTA-19820493/commscope_commscope_amp_connector_rj45_cat_6_amp_full01_079f595c.jpg",
+      "ok": true,
+      "type": "image/jpeg"
+    }
+  ]
+}

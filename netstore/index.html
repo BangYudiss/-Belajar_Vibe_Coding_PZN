@@ -396,7 +396,34 @@
 
   <!-- Skrip rendering halaman utama -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
+      const featuredGrid = document.getElementById('featured-products-grid');
+      if (featuredGrid) {
+        featuredGrid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: var(--space-12) 0;">
+            <div class="spinner" style="border: 4px solid rgba(255,255,255,0.1); border-left-color: var(--color-accent); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto var(--space-4) auto;"></div>
+            <p style="color: var(--color-text-muted);">Memuat produk unggulan...</p>
+          </div>
+        `;
+        if (!document.getElementById('spinner-style')) {
+          const style = document.createElement('style');
+          style.id = 'spinner-style';
+          style.innerHTML = `@keyframes spin { to { transform: rotate(360deg); } }`;
+          document.head.appendChild(style);
+        }
+      }
+
+      if (typeof fetchProductsFromSheets === 'function') {
+        try {
+          window.products = await fetchProductsFromSheets();
+        } catch (e) {
+          console.error("Gagal memuat produk dari sheets:", e);
+          if (featuredGrid) {
+            featuredGrid.innerHTML = '<p class="error-msg" style="grid-column: 1 / -1; text-align: center; color: var(--color-danger);">Gagal memuat produk unggulan. Hubungi administrator.</p>';
+          }
+          return;
+        }
+      }
       renderFeaturedProducts();
     });
 
@@ -439,7 +466,7 @@
         
         card.innerHTML = `
           ${badgeHTML}
-          <div class="product-card-image-wrap">
+          <div class="product-card-image-wrap ${product.inStock ? '' : 'out-of-stock'}">
             <!-- TODO: ganti dengan foto asli produk -->
             <img 
               src="${product.images[0]}" 
@@ -459,8 +486,8 @@
             </div>
             <div class="product-card-actions">
               <a href="product-detail.html?id=${product.id}" class="btn btn-outline" id="btn-detail-${product.id}">Detail Produk</a>
-              <button class="btn btn-accent" id="btn-buy-${product.id}" onclick="openWhatsApp('${product.name}', '${product.id}')">
-                Beli via WA
+              <button class="btn btn-accent" id="btn-buy-${product.id}" onclick="openWhatsApp('${product.name}', '${product.id}')" ${product.inStock ? '' : 'disabled'}>
+                ${product.inStock ? 'Beli via WA' : 'Habis'}
               </button>
             </div>
           </div>
