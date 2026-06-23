@@ -1,0 +1,382 @@
+/* ==========================================================================
+   STYLE KHUSUS HALAMAN DETAIL PRODUK (PRODUCT-DETAIL.HTML)
+   ========================================================================== */
+
+/* ===== BREADCRUMBS ===== */
+.breadcrumbs {
+  padding: var(--space-6) 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.breadcrumbs-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumbs-item a {
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease;
+}
+
+.breadcrumbs-item a:hover {
+  color: var(--color-primary);
+}
+
+.breadcrumbs-item::after {
+  content: '/';
+  margin-left: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.breadcrumbs-item:last-child::after {
+  content: '';
+}
+
+.breadcrumbs-item.active {
+  color: var(--color-text-muted);
+  font-weight: var(--font-medium);
+  pointer-events: none;
+}
+
+/* ===== LAYOUT DETAIL UTAMA ===== */
+.detail-content {
+  padding: 0 0 var(--space-16);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  align-items: start;
+  margin-bottom: var(--space-16);
+}
+
+@media (min-width: 1024px) {
+  .detail-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-16);
+  }
+}
+
+/* ===== GALERI FOTO ===== */
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.gallery-main-wrap {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.gallery-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--space-4);
+  transition: opacity 0.2s ease;
+}
+
+.gallery-main-img.fade-out {
+  opacity: 0;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.gallery-thumb {
+  width: 72px;
+  height: 54px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  cursor: pointer;
+  padding: 2px;
+  object-fit: contain;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.gallery-thumb:hover {
+  border-color: var(--color-primary-light);
+}
+
+.gallery-thumb.active {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== INFORMASI PRODUK (KOLOM KANAN) ===== */
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.info-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.info-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.info-brand {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+}
+
+.info-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+}
+
+@media (min-width: 768px) {
+  .info-title {
+    font-size: var(--text-3xl);
+  }
+}
+
+.info-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.info-price-original {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.info-price {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-primary-dark);
+}
+
+.info-short-desc {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.info-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Box Konsultasi IT */
+.consult-box {
+  padding: var(--space-5);
+  background-color: var(--color-primary-light);
+  border: 1px dashed var(--color-primary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.consult-box-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.consult-box-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.consult-box-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary-dark);
+}
+
+.consult-box-desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+/* ===== DETAIL SPESIFIKASI & DESKRIPSI ===== */
+.specs-section {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-12);
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+@media (min-width: 1024px) {
+  .specs-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.specs-block-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-primary-light);
+  width: fit-content;
+}
+
+.long-desc-content {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.long-desc-content p {
+  margin-bottom: var(--space-4);
+}
+
+.specs-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.specs-table tr {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.specs-table tr:nth-child(even) {
+  background-color: var(--color-surface);
+}
+
+.specs-table th {
+  text-align: left;
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  padding: var(--space-3) var(--space-4);
+  width: 35%;
+  vertical-align: top;
+}
+
+.specs-table td {
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text-secondary);
+  vertical-align: top;
+}
+
+/* ===== ERROR STATE ===== */
+.error-container {
+  display: none; /* Toggled via JS */
+  text-align: center;
+  padding: var(--space-20) var(--space-4);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+}
+
+.error-container.active {
+  display: flex;
+}
+
+.error-icon {
+  width: 96px;
+  height: 96px;
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.error-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.error-desc {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  max-width: 450px;
+  line-height: var(--leading-normal);
+  margin-top: -10px;
+}
+
+/* ===== RELATED PRODUCTS ===== */
+.related-products {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-12) 0 var(--space-16);
+  background-color: var(--color-bg);
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .related-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
